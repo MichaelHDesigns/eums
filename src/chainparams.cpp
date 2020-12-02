@@ -368,41 +368,41 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0xb6;
-        pchMessageStart[1] = 0x13;
-        pchMessageStart[2] = 0xb7;
-        pchMessageStart[3] = 0xfc;
-        vAlertPubKey = ParseHex("0410544f386dfb318cd00c7c5471c4ac92317c12e0d86915942c39ea00f3df08a90b64b0887523a8a6f33f62b109049ba4d2d19d2f8b97fe620f5b1980f86f1429");
-        nDefaultPort = 55606;
+        pchMessageStart[0] = 0xt7;
+        pchMessageStart[1] = 0x24;
+        pchMessageStart[2] = 0xc4;
+        pchMessageStart[3] = 0xtr;
+        vAlertPubKey = ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f");
+        nDefaultPort = 85901;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // eums starting difficulty is 1 / 2^12
         nSubsidyHalvingInterval = 210000;
         nMaxReorganizationDepth = 100;
-        nEnforceBlockUpgradeMajority = 750;
-        nRejectBlockOutdatedMajority = 950;
-        nToCheckBlockUpgradeMajority = 1000;
+        nEnforceBlockUpgradeMajority = 100;
+        nRejectBlockOutdatedMajority = 200;
+        nToCheckBlockUpgradeMajority = 300;
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // eums: 1 day
         nTargetSpacing = 1 * 60;  // eums: 1 minute
-        nLastPOWBlock = 1000;
+        nLastPOWBlock = 20000000;
         nMaturity = 10;
         nMasternodeCountDrift = 20;
-        nModifierUpdateBlock = 615800;
+        nModifierUpdateBlock = 1000;
         nMaxMoneyOut = 332200000 * COIN;
 
-        const char* pszTimestamp = "Elitium Staking July 24 2019";
+        const char* pszTimestamp = "Devilking6105 says to enjoy your day Dec 1 2020";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 250 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("0498e22a5bcfa738187acb285c0d1d4fe8757124bd6d179973a19749b27c5dd29114512bbd3414c8328b05912710ea771708b4e63983be5285c9971b5d95eccea0") << OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04ffff001d01042f446576696c6b696e6736313035207361797320746f20656e6a6f7920796f7572206461792044656320312032303230") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1564314733;
+        genesis.nTime = 1606946389;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 883156;
+        genesis.nNonce = 255742;
 
 const int SCRYPT_SCRATCHPAD_SIZE = 131072 + 63;
 
@@ -443,11 +443,11 @@ const int SCRYPT_SCRATCHPAD_SIZE = 131072 + 63;
         hashGenesisBlock = genesis.GetHash();
 
 
-        assert(hashGenesisBlock == uint256("0x59b2611a3a353e50c3276c395368f69c8ac7688aff7ef6258bb3a385781543db"));
+        assert(hashGenesisBlock == uint256("00000479849f63dd161a23d9c4293b889f7fde8bb3d1180afd11b979e3b30578"));
 
-        vSeeds.push_back(CDNSSeedData("199.247.26.240", "199.247.26.240"));     // Primary DNS Seeder Amsterdam
+        /*vSeeds.push_back(CDNSSeedData("199.247.26.240", "199.247.26.240"));   */  // Primary DNS Seeder Amsterdam
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 33);
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(083, 067, 078); // Starts with SCN
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 35);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 212);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x2D)(0x02)(0x25)(0x33).convert_to_container<std::vector<unsigned char> >();
