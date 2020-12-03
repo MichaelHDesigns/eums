@@ -368,10 +368,10 @@ public:
          * The characters are rarely used upper ASCII, not valid as UTF-8, and produce
          * a large 4-byte int at any alignment.
          */
-        pchMessageStart[0] = 0xt7;
+        pchMessageStart[0] = 0xa7;
         pchMessageStart[1] = 0x24;
         pchMessageStart[2] = 0xc4;
-        pchMessageStart[3] = 0xtr;
+        pchMessageStart[3] = 0xag;
         vAlertPubKey = ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f");
         nDefaultPort = 85901;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // eums starting difficulty is 1 / 2^12
@@ -447,7 +447,7 @@ const int SCRYPT_SCRATCHPAD_SIZE = 131072 + 63;
 
         /*vSeeds.push_back(CDNSSeedData("199.247.26.240", "199.247.26.240"));   */  // Primary DNS Seeder Amsterdam
 
-        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(083, 067, 078); // Starts with SCN
+        base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(0, 27); // Starts with SCN
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 35);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 212);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x2D)(0x02)(0x25)(0x33).convert_to_container<std::vector<unsigned char> >();
