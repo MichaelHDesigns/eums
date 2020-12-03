@@ -371,7 +371,7 @@ public:
         pchMessageStart[0] = 0xa7;
         pchMessageStart[1] = 0x24;
         pchMessageStart[2] = 0xc4;
-        pchMessageStart[3] = 0xag;
+        pchMessageStart[3] = 0xcb;
         vAlertPubKey = ParseHex("04678afdb0fe5548271967f1a67130b7105cd6a828e03909a67962e0ea1f61deb649f6bc3f4cef38c4f35504e51ec112de5c384df7ba0b8d578a4c702b6bf11d5f");
         nDefaultPort = 85901;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // eums starting difficulty is 1 / 2^12
